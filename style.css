@@ -1,0 +1,244 @@
+/* Basic Reset */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* Header and Navigation */
+header {
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.2)), url('./pexels-muffin-2468773.jpg') no-repeat center center;
+    background-size: cover;
+    font-family: sans-serif;
+    position: relative;
+}
+
+nav {
+    width: 100%;
+    height: 100px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.logo {
+    font-size: 2em;
+    letter-spacing: 2px;
+}
+
+.menu {
+    display: flex;
+}
+
+.menu a {
+    text-decoration: none;
+    color: white;
+    padding: 10px 20px;
+    font-size: 20px;
+    position: relative;
+    transition: 0.4s;
+}
+
+.menu a:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    border-bottom: 2px solid indianred;
+    transition: 0.4s linear;
+}
+
+.menu a:hover:before {
+    width: 90%;
+}
+
+.register a {
+    text-decoration: none;
+    color: white;
+    padding: 10px 20px;
+    font-size: 20px;
+    background-color: indianred;
+    border-radius: 8px;
+    transition: 0.4s linear;
+}
+
+.register a:hover {
+    background: transparent;
+    border: 1px solid indianred;
+}
+
+.hamburger {
+    display: none;
+    font-size: 2em;
+    cursor: pointer;
+}
+
+/* Hero Text */
+.h-txt {
+    max-width: 650px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.h-txt span {
+    letter-spacing: 5px;
+}
+
+.h-txt h1 {
+    font-size: 3.5em;
+}
+
+.h-txt a {
+    text-decoration: none;
+    background-color: indianred;
+    color: white;
+    padding: 10px 20px;
+    letter-spacing: 5px;
+    border-radius: 5px;
+    transition: 0.4s;
+}
+
+.h-txt a:hover {
+    background: transparent;
+    border: 1px solid indianred;
+}
+
+/* Scroll Down Arrow */
+.scroll-down {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2em;
+}
+
+.scroll-down a {
+    color: white;
+    transition: color 0.3s ease-in-out;
+}
+
+.scroll-down a:hover {
+    color: indianred;
+}
+
+/* Back to Top Button */
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    font-size: 2em;
+    display: none;
+}
+
+.back-to-top a {
+    color: indianred;
+    text-decoration: none;
+}
+
+.back-to-top a:hover {
+    color: darkred;
+}
+
+/* Sections */
+#services {
+    padding: 50px 20px;
+    background: #f4f4f4;
+    text-align: center;
+}
+
+#services h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+#services p {
+    font-size: 1.2em;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .menu {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        background-color: rgba(0, 0, 0, 0.8);
+        position: absolute;
+        top: 100px;
+        left: 0;
+        width: 100%;
+    }
+
+    .menu a {
+        font-size: 18px;
+        padding: 10px;
+        width: 100%;
+        text-align: center;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .h-txt h1 {
+        font-size: 2.5em;
+    }
+}
+
+@media (max-width: 480px) {
+    .h-txt h1 {
+        font-size: 2em;
+    }
+
+    .h-txt span {
+        font-size: 14px;
+        letter-spacing: 3px;
+    }
+
+    .h-txt a {
+        padding: 8px 16px;
+        font-size: 14px;
+        letter-spacing: 3px;
+    }
+
+    .logo {
+        font-size: 1.5em;
+    }
+
+    .menu a {
+        font-size: 16px;
+        padding: 8px 10px;
+    }
+
+    .register a {
+        font-size: 16px;
+        padding: 7px 10px;
+    }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Active Menu */
+.menu.active {
+    display: flex;
+}
